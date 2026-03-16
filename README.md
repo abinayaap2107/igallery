@@ -108,53 +108,31 @@ button
 image.js
 ```
 
-.container1
+        var img = [
+    {image:"sk1.jpg", caption:"Sivakarthikeyan"},
+    {image:"virat.jpg", caption:"Virat"},
+    {image:"dhruv.jpg", caption:"Dhruv Vikram"},
+    {image:"dhoni.jpg", caption:"Dhoni"},
+    {image:"arjun.jpg", caption:"Arjun Das"},
+];
+var index=0;
+function next()
 {
-    display:flex;
-    align-items: center;    
-    background-color: lavender;
-    margin-top: 100px; 
-    flex-direction: column;
-    border:5px solid pink;
-    width:550;
-    margin-left:600;
-    height:600;
-}
-.box
-{
-    width:500px;
-    height:500px;
-}
-.box p
-{
-    text-align:center;
-    font-weight:bold;
+    index++;
+    if(index >= img.length)
+        index = 0;
+    document.getElementById("image").src = img[index].image;
+    document.getElementById("about").innerhtml= img[index].caption;
 }
 
-.buttons
+function prev()
 {
-    padding: 15px;
-    gap: 30px;             
+    index--;
+    if(index < 0)
+        index = img.length - 1;
+    document.getElementById("image").src = img[index].image;
+    document.getElementById("about").innerhtml= img[index].caption;
 }
-button
-{
-    width: 130px;
-    padding: 7px;
-    font-weight: bold;
-    margin-top:100px;
-}
-
-.footer 
-{
-    position:fixed;
-    background-color: aquamarine;
-    text-align: center;
-    color:black;
-    width:100%;
-    bottom: 0%;
-    left: 0%;
-}
-
 
 ```
 ## OUTPUT:
